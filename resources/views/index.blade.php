@@ -20,7 +20,12 @@
                 <td><a href="{{route('users.show', $user)}}">{{$user->name}}</a></td>
                 <td>{{$user->email}}</td>
                 <td>
+                    <form method="POST" action="{{route('users.destroy', $user)}}">
                     <a type="button" class="btn btn-info" href="{{route('users.edit', $user)}}">Изменить</a>
+                    @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit">Удалить</button>
+                    </form>
                 </td>
             </tr>
 
