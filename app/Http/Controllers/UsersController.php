@@ -49,7 +49,7 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-    return view('show');
+    return view('show', compact('user'));
     }
 
     /**
@@ -74,7 +74,7 @@ class UsersController extends Controller
     {
         $user->update($request->only(['name', 'email']));
         return redirect()->route('users.index');
-        //       dd($request->all());
+//              dd($request->all());
     }
 
     /**

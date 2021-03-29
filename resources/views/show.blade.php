@@ -1,5 +1,15 @@
 @extends('layout')
-@section('title', 'Список клиентов')
+@section('title', 'Клиент ' . $user->name)
 @section('content')
-    {{dd($user)}}
+    <a type="button" class="btn btn-dark mt-3" href="{{route('users.index')}}">К списку</a>
+    <a type="button" class="btn btn-info mt-3" href="{{route('users.edit', $user)}}">Изменить</a>
+    <div class="card mt-3" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Id: {{$user->id}}</li>
+            <li class="list-group-item">Имя: {{$user->name}}</li>
+            <li class="list-group-item">Email: {{$user->email}}</li>
+            <li class="list-group-item">Создан: {{$user->created_at->format('d.m.Y h:i:s')}}</li>
+            <li class="list-group-item">Обновлен: {{$user->updated_at->format('d.m.Y h:i:s')}}</li>
+        </ul>
+    </div>
 @endsection

@@ -1,7 +1,9 @@
 @extends('layout')
-@section('title', isset($user) ? 'Update'. $user->name : 'Создать клиента')
+@section('title', isset($user) ? 'Обновить' .$user->name : 'Создать клиента')
 @section('content')
+
     <a type="button" class="btn btn-dark" href="{{route('users.index')}}">К списку</a>
+
     <form method="POST"
           @if(isset($user))
           action="{{route('users.update', $user)}}"
@@ -9,10 +11,12 @@
           action="{{route('users.store')}}"
           @endif
           class="mt-4">
+
         @csrf
         @isset($user)
         @method('PUT')
         @endisset
+
         <div class="row">
             <div class="col">
                 <input name="name"
