@@ -36,6 +36,9 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
+        User::create($request->only(['name', 'email']));
+        return redirect()->route('users.index');
+//        dd($request->all());
     }
 
     /**
@@ -69,7 +72,9 @@ class UsersController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        //
+        $user->update($request->only(['name', 'email']));
+        return redirect()->route('users.index');
+        //       dd($request->all());
     }
 
     /**
