@@ -17,7 +17,6 @@
             -moz-user-select: none;
             user-select: none;
         }
-
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -36,8 +35,6 @@
     <main>
         @yield('content')
     </main>
-
-
 </div>
 
 <script src="https://getbootstrap.com/docs/5.0/examples/checkout/form-validation.js"></script>
