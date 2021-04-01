@@ -21,19 +21,19 @@
                 <input name="name"
                        value="{{old('name', isset($user) ? $user->name : null)}}"
                        type="text" class="form-control" placeholder="Имя" aria-label="Имя">
-{{--                @error('name')--}}
-{{--                <div class="alert alert-danger">{{ $message }}--}}
-{{--                </div>--}}
-{{--                @enderror--}}
+                @error('name')
+                <div class="alert alert-danger">{{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="col">
                 <input name="email"
                        value="{{old('email', isset($user) ? $user->email : null)}}"
                        type="text" class="form-control" placeholder="Email" aria-label="Email">
-{{--                @error('email')--}}
-{{--                <div class="alert alert-danger">{{ $message }}--}}
-{{--                </div>--}}
-{{--                @enderror--}}
+                @error('email')
+                <div class="alert alert-danger">{{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="col">
                 <button type="submit" class="btn btn-primary">Сохранить</button>

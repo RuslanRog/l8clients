@@ -34,9 +34,10 @@
         @endforeach
         </tbody>
     </table>
+    <div class="position-absolute start-50 translate-middle mt-5">
+    {{$users->links()}}
+    </div>
 @endsection
-
-
 
 
 
@@ -53,11 +54,14 @@
 {{--    </thead>--}}
 {{--    <tbody>--}}
 {{--    @foreach($users as $user)--}}
-
 {{--        <tr>--}}
 {{--            <th scope="row">{{$user->id}}</th>--}}
-{{--            <td><a href="{{route('users.show', $user)}}">{{$user->name}}</a></td>--}}
-{{--            <td>{{$user->email}}</td>--}}
+{{--            <td>--}}
+{{--                <a href="{{route('users.show', $user)}}">{{$user->name}}</a>--}}
+{{--            </td>--}}
+{{--            <td>--}}
+{{--                {{$user->email}}--}}
+{{--            </td>--}}
 {{--            <td>--}}
 {{--                <form method="POST" action="{{route('users.destroy', $user)}}">--}}
 {{--                    <a type="button" class="btn btn-info" href="{{route('users.edit', $user)}}">Изменить</a>--}}
