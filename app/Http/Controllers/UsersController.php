@@ -38,7 +38,7 @@ class UsersController extends Controller
     {
         //dd($request->all());
         User::create($request->only(['name', 'email']));
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->withSuccess($request->name . ' Добавлен');;;
 //        dd($request->all());
     }
 
@@ -75,7 +75,7 @@ class UsersController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->only(['name', 'email']));
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->withSuccess($user->name . ' Добавлен');;
 //              dd($request->all());
     }
 
@@ -88,6 +88,6 @@ class UsersController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->withDanger($user->name . ' Удален');
     }
 }

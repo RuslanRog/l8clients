@@ -17,6 +17,7 @@
             -moz-user-select: none;
             user-select: none;
         }
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
@@ -33,6 +34,12 @@
 <div class="container">
     <h1>@yield('title')</h1>
     <main>
+        @if(session('success'))
+            <div class="alert alert-success">{{session('success')}}</div>
+@endisset
+            @if(session('danger'))
+                <div class="alert alert-danger">{{session('danger')}}</div>
+            @endisset
         @yield('content')
     </main>
 </div>
